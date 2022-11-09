@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+:root {
+  --primary-background-color: #121214;
+  --font-family: 'Roboto', sans-serif;
+  --text-primary-color: #FFFFFF;
+  --text-secondary-color: #F7DD43;
+  --line-color: #323238;
+  --background-image: url(../images/bgNumbersBolean.svg); 
+}
+
+/*Troca a classe no body para mudar a cor*/
+body.red {
+    --border-color: #871a3c;
+    --background-color: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(135,26,60,1) 0%, rgba(18,18,20,1) 100%);
+    --card-bg-color: #21020f;
+}
+
+body.blue {
+    --border-color: #338AF3;
+    --background-color: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(51,138,243,1) 0%, rgba(18,18,20,1) 100%);
+    --card-bg-color: #202024;
+}
+
+body.green {
+    --border-color: #047C3F;
+    --background-color: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(53,135,93,1) 0%, rgba(18,18,20,1) 100%);
+    --card-bg-color: #1a1f1b;
+}
+
+body.yellow {
+    --border-color: #F7DD43;
+    --background-color: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(247,221,67,1) 0%, rgba(18,18,20,1) 100%);
+    --card-bg-color: #1d1c19;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: var(--background-color) repeat; 
+}
+
+body::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--background-image) space;
+    background-size: 100%;
+    background-position: center;
+    z-index: -1;
+}
+
+.app {
+    width: fit-content;
+    margin: 3.25rem;
+
+}
+
+header {
+    margin-bottom: 3.938rem;
+    text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem; /*24px*/
+    margin-bottom: 2rem; /*32px*/
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.nav-bar >a:is(:link, :active, :visited) {
+    color: var(--text-secondary-color);
+    background-color: var(--background-color);
+}
+
+a:is(:link, :active, :visited).active {
+    color: var(--text-primary-color);
+    background-color: var(--background-color);
+}
+
+.nav-bar >a:hover {
+    transform: scale(1.2);
+    color: var(--text-primary-color)
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 6.25rem; /*100px*/
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem; /*24px*/
+    background-color: var(--card-bg-color);
+    border-bottom: 0.125rem solid var(--border-color);
+    border-radius: 0.4rem;
+    box-shadow: 0 0.4rem 0.5rem -0.3rem rgb(23, 14, 14); /*6px 8px -4px*/
+}
+
+
+.card >h2 {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 0.063rem solid var(--border-color);
+    border-radius: 0.375rem;
+    width: 11.25rem; /*180px*/
+    height: fit-content;
+    margin-inline: auto;
+    margin-bottom: 3.313rem;
+    color: var(--text-secondary-color);
+}
+
+.card >h2 >spam {
+    color: var(--text-primary-color);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.card >ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    width: 19rem;
+}
+
+.card >ul >li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Estilização li que tem uma li antes*/
+.card >ul >li + li {
+    padding-top: 0.9rem;
+    border-top: 0.063rem solid var(--line-color);
+}
+
+.card >ul >li >strong {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 125%;
+    color: var(--text-primary-color);
+}
+
+
+.card >ul >li >figure {
+    min-width: 7.375rem; /*118px*/
+}
+
+.card >ul >li >figure >figcaption {
+    color: var(--text-primary-color);
+    font-size: 0.75rem; /*12px*/
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+}
+
+/*Aplicar a mesma estilização para dois elementos
+.card >ul >li >strong:hover, 
+.card >ul >li >img:hover {
+    transform: scale(1.1);
+}*/
+
+.card >ul >li >figure >img:hover {
+    transform: scale(1.2);}
+
+
+.card >ul >li >figure >img{
+    transition: transform 0.3s;
+}
+
+.footer {
+    background: var(--card-bg-color);
+    padding: 1rem; /*20px*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: var(--text-primary-color);
+}
+
+.footer >img {
+    min-width: 8.75rem; /*140px*/
+    max-width: 11.25rem; /*180px*/
+}
+
+.footer >spam {
+    display: flex;
+    align-items: center;
+}
+
+
+/*Resposividade Desktop*/
+@media (min-width: 40.625rem) {
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 6.25rem; /*100px*/
+    }
+
+    .card {
+        display: flex;
+    }
+
+    .footer {
+        justify-content: space-around;
+        position: fixed;
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 0.8rem; /*12px*/
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--primary-background-color);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 0.4rem; /*6px*/
+    border: 3px solid var(--background-color);
+  }
+
+/*Animação
+
+.card {
+    opacity: 0;
+    animation: appear .2s forwards;
+}
+forwards: um após o outro
+
+
+Animar cada card de forma diferente
+.card:nth-child(2){
+    animation-delay: .2s;
+}
+.card:nth-child(3){
+    animation-delay: .4s;
+}...
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+  
+}*/
